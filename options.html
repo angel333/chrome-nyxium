@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<title>Nastavení Nyxia</title>
+	<meta charset='utf-8'>
+	<style type="text/css" media="screen">
+		body { margin-top: 30px; font-size: .7em; }
+		.cleaner { clear: both; }
+		body, td, th { font-family: arial; }
+		div#container { width: 800px; margin: auto; }
+		img#logo { float: left; height: 36px; width: 36px; margin-right: 10px; }
+		h1 { line-height: 36px; margin: 0; padding-top: 3px; font-weight: normal; font-size: 1.8em; }
+		h2 { border-top: 1px solid hsl(0, 0%, 70%); margin: 0; margin-top: 10px; padding: 5px 5px; background: -webkit-gradient(linear, left top, left bottom, color-stop(0, hsl(0, 0%, 90%)), color-stop(1, hsl(0, 0%, 100%))); font-size: 1em; }
+
+		th { text-align: right; width: 130px; }
+		td { width: 300px; }
+		td.description { color: hsl(0, 0%, 20%); width: auto; }
+	</style>
+	<script src='jquery-1.8.1.min.js' type='text/javascript'></script>
+	<script src='options.js' type='text/javascript'></script>
+</head>
+
+<body>
+
+	<div id="container">
+
+		<img src="logo.png" alt="Nyxium" id='logo'>
+		<h1>
+			Nastavení Nyxia
+		</h1>
+
+		<h2>Přihlášení</h2>
+		<table>
+			<tr><th>ID:</th><td><input id='nick' type='text'/></td><td class='description'>Vaše ID na Nyxu</td></tr>
+			<tr><th>Externí heslo:</th><td><input id='password' type='password'/></td><td class='description'>Nastavíte v <strong>osobní</strong> &raquo; <strong>nastavení</strong> &raquo; <strong>externí heslo</strong> (<a target='_blank' href='http://www.nyx.cz/index.php?l=user;l2=2'>link</a>)</td></tr>
+		</table>
+
+		<h2>Automatické přihlašování</h2>
+		<table>
+			<tr><th><input id='enable_autologin' type='checkbox'/></th><td style='cursor:pointer'>Přihlašovat se automaticky na Nyx</td><td class='description'>Podpora pro automatické přihlašování je <strong>experimentální</strong></td></tr>
+			<tr class='autologin_form'><th>Přihlašovací heslo:</th><td><input id='autologin_password' class='autologin_input' type='password'/></td><td class='description'>Heslo, se kterým se přihlašujete na Nyx</td></tr>
+			<tr class='autologin_form'><th><input id='autologin_ssl' class='autologin_input' type='checkbox'/></th><td style='cursor:pointer'>Přihlašovat se pomocí zabezpečeného protokolu</td><td class='description'></td></tr>
+		</table>
+
+		<h2>Nastavení pop-up okna</h2>
+		<table>
+			<tr><th><input id='show-categories' type='checkbox'/></th><td style='cursor:pointer'>Zobrazovat kategorie</td></tr>
+			<tr><th><input id='open-in-new-tab' type='checkbox'/></th><td style='cursor:pointer'>Otevírat odkazy v novém tabu</td></tr>
+		</table>
+
+		<h2>Pokročilá nastavení</h2>
+		<table>
+			<tr><th><input id='api_ssl' type='checkbox'/></th><td id='api_ssl-label' style='cursor:pointer'>Komunikovat zabezpečeným protokolem</td><td class='description'>Týká se pouze externího rozhraní, tj. pop-up okno</td></tr>
+			<tr><th>Timeout:</th><td><input id='timeout' type='text'/></td><td class='description'>Ve vteřinách, minimálně 60</td></tr>
+		</table>
+
+		
+		<h2 style='text-align:center'>
+			<button id='save-button' style='float:left'>Uložit</button>
+			<button id='clear-button' style='float:right'>Smazat nastavení</button>
+			<span id='status'></span>
+			<div class='cleaner'></div>
+		</h2>
+	</div>
+
+	<button id='test'>test</button>
+
+</body>
+</html>
+
